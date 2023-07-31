@@ -1,0 +1,60 @@
+.form {
+  border: 1px solid #000;
+  border-radius: 10px;
+  margin: 50px auto;
+  width: 400px;
+  padding: 30px;
+
+  &__label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  &__btn {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 5px 15px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .just-validate-error-label {
+    position: absolute;
+    right: 5px;
+    top: 100%;
+  }
+}
+
+.file {
+  &__input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+  }
+
+  &__title {
+    border: 1px solid #000;
+    display: inline-block;
+    padding: 5px 10px;
+    flex-grow: 0;
+    cursor: pointer;
+  }
+}
+
+.message {
+  flex-direction: column;
+
+  &__title {
+    margin-bottom: 10px;
+  }
+
+  &__textarea {
+    height: 80px;
+    padding: 10px;
+    resize: none;
+  }
+}

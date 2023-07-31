@@ -23,7 +23,7 @@ export const validateForms = (selector, rules, afterSend) => {
       if (item.tel) {
         item.rules.push({
           rule: 'function',
-          validator: function() {
+          validator: function () {
             const phone = telSelector.inputmask.unmaskedvalue();
             return phone.length === 10;
           },
@@ -51,7 +51,21 @@ export const validateForms = (selector, rules, afterSend) => {
           if (afterSend) {
             afterSend();
           }
-          console.log('Отправлено');
+          showSuccessMessage();
+        }
+      }
+    }
+
+    function showSuccessMessage() {
+      const success = document.querySelector('.success');
+      if (success) {
+        success.style.display = 'block';
+
+        const closeButton = success.querySelector('.success__btn');
+        if (closeButton) {
+          closeButton.addEventListener('click', () => {
+            success.style.display = 'none';
+          });
         }
       }
     }

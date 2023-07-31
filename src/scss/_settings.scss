@@ -122,3 +122,67 @@ a {
   grid-template-rows: repeat(12, 1fr);
   gap: 30px;
 }
+
+.custom-checkbox {
+  &__input {
+    position: absolute;
+    opacity: 0;
+  }
+
+  &__text {
+    display: block;
+    margin-bottom: 30px;
+    position: relative;
+    padding-top: 13px;
+    padding-left: 33px;
+    font-size: 13px;
+    line-height: 16px;
+    color: var(--black);
+    cursor: pointer;
+  }
+
+  &__text::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: -1px;
+    display: inline-block;
+    border: 1px solid var(--black);
+    border-radius: 3px;
+    background-color: var(--light);
+    width: 20px;
+    height: 20px;
+    box-shadow: inset 0px 4px 8px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  &__text::after {
+    content: "";
+    position: absolute;
+    left: -1px;
+    bottom: 0;
+    width: 20px;
+    height: 20px;
+    border: 1px solid var(--black);
+    border-radius: 3px;
+    background-color: var(--light);
+    background-image: url("../img/check.svg");
+    background-position: center;
+    background-size: 10px 10px;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  &__input:checked + &__text::before {
+    background-color: red;
+  }
+
+  &__input:checked + &__text::after {
+    opacity: 1;
+  }
+
+  // &__input:focus + &__text {
+  //   outline: 3px solid var(--black);
+  // }
+}

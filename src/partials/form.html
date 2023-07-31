@@ -1,0 +1,31 @@
+<section class="form-box">
+  <div class="container">
+    <form class="form" method="POST" enctype="multipart/form-data">
+      <input class="form__input" type="hidden" name="admin_email[]" value="">
+      <input class="form__input" type="hidden" name="form_subject" value="Тема письма">
+      <h2 class="form__title">Отправка формы</h2>
+      <label class="form__label" for="name">
+        Введите имя
+        <input class="form__input input-name" id="name" type="text" name="Имя пользователя">
+      </label>
+      <label class="form__label" for="tel">
+        Введите телефон
+        <input class="form__input input-tel" id="tel" type="tel" name="Телефон">
+      </label>
+      <label class="form__label" for="email">
+        Введите email
+        <input class="form__input input-email" id="email" type="email" name="Email">
+      </label>
+      <label class="form__label file" for="file">
+        <span class="file__title">Прикрепить файл</span>
+        <input class="file__input input-file" id="file" autocomplete="off" type="file" name="file[]" multiple>
+      </label>
+      <label class="form__label message" for="textarea">
+        <span class="message__title">Отправить сообщение</span>
+        <textarea class="message__textarea input-textarea" id="textarea" name="Сообщение"
+          placeholder="Ваше сообщение"></textarea>
+      </label>
+      <button class="form__btn" type="submit">Отправить</button>
+    </form>
+  </div>
+</section>
