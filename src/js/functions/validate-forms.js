@@ -59,12 +59,14 @@ export const validateForms = (selector, rules, afterSend) => {
     function showSuccessMessage() {
       const success = document.querySelector('.success');
       if (success) {
-        success.style.display = 'block';
+        success.style.opacity = '1';
+        success.style.visibility = 'visible';
 
         const closeButton = success.querySelector('.success__btn');
         if (closeButton) {
           closeButton.addEventListener('click', () => {
-            success.style.display = 'none';
+            success.style.opacity = '0';
+            success.style.visibility = 'hidden';
           });
         }
       }
